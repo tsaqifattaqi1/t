@@ -1,0 +1,11 @@
+{
+  "name": "devabot",
+  "description": "Lightweight WhatsApp Bot",
+  "repository": "https://github.com/irwanx/devabot",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": [
+    "bot",
+    "whatsapp",
+    "whatsapp-bot"
+  ]
+}
