@@ -1,6 +1,6 @@
 let fs = require('fs')
 const { MessageType } = require('@adiwajshing/baileys')
-let handler = async (m) => {
+let handler = async (m, { conn, participants }) => {
 let users = participants.map((u) => u.jid);
 let zero = fs.readFileSync('./audio/halosyg.mp3')
 conn.sendMessage(m.chat, zero, MessageType.audio, {quoted: m, mimetype: 'audio/mp4', ptt:true})
