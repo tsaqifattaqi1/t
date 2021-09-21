@@ -27,7 +27,7 @@ handler.all = async function (m, { isBlocked }) {
 
     // ketika ada yang invite/kirim link grup di chat pribadi
     if ((m.mtype === 'groupInviteMessage' || m.text.startsWith('https://chat') || m.text.startsWith('Buka tautan ini')) && !m.isBaileys && !m.isGroup) {
-        this.sendButton(m.chat, `━━•✵ ⃟  ⃟  ⃟✵•
+        this.sendButton(m.chat, `╭━━•✵ ⃟  ⃟  ⃟✵
 ┃
 ┃ *SEWA BOT : ↷↷*
 ┃
@@ -44,7 +44,7 @@ handler.all = async function (m, { isBlocked }) {
 ┃
 ╰•°°°🕊°°°°°🕊°°°°°°🕊°°°°°°°°
 
-`.trim(), '© xyz', 'Pemilik Bot', ',owner', m)
+`.trim(), '© XsvsH', 'Metode Pembayaran', ',donasi', m)
     }
 
     // salam
