@@ -1,6 +1,6 @@
 let handler = async (m, { conn, text, participants, isAdmin, isOwner }) => {
   if (m.isGroup) {
-    if (!(isAdmin || isOwner || isPrems)) {
+    if (!(isAdmin || isOwner)) {
       global.dfail('admin', m, conn)
       throw false
     }
