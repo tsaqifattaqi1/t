@@ -6,7 +6,7 @@ conn.sendMessage(m.chat, zero, MessageType.audio, {quoted: m, mimetype: 'audio/m
 //conn.fakeReply(m.chat, zero, '0@s.whatsapp.net', '*🔥WOAHHHHH 🔥*', 'status@broadcast')
 }
 
-handler.customPrefix = /sun|cium|mwah|mmwah/i
+handler.customPrefix = /^(sun|cium|mwah|mmwah)?$/i
 handler.command = new RegExp
 
 module.exports = handler
