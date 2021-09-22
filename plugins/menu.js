@@ -36,7 +36,7 @@ ${'```%npmdesc```'}
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner', 'dewasa', 'update']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
@@ -59,6 +59,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'absen': 'Absen',
     'quran': 'Al Qur\'an',
     'audio': 'Pengubah Suara',
+    'dewasa': 'Dewasa',
+    'update': 'Update',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
     '': 'Tanpa Kategori',
@@ -123,6 +125,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'info') tags = {
     'info': 'Info'
+  }
+  if (teks == 'dewasa') tags = {
+    'dewasa': 'Dewasa'
+  }
+  if (teks == 'update') tags = {
+    'update': 'Update'
   }
   if (teks == 'tanpakategori') tags = {
     '': 'Tanpa Kategori'
@@ -282,6 +290,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "title": "Info",
                   "description": "Inpone ri",
                   "rowId": ".? info"
+                }, {
+                  "title": "Dewasa",
+                  "description": "deawasalah dikit",
+                  "rowId": ".? dewasa"
+                }, {
+                  "title": "Update",
+                  "description": "Update Terbaru",
+                  "rowId": ".? update"
                 }, {
                   "title": "Tanpa Kategori",
                   "description": "sesuai dengan nama",
