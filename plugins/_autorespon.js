@@ -18,8 +18,8 @@ handler.all = async function (m, { isBlocked }) {
                 '© xyz',
                 isBanned ? 'Unban' : banned ? 'Pemilik Bot' : 'Menu',
                 isBanned ? '.unban' : banned ? '.owner' : '.?',
-                m.isGroup ? 'Ban' : isBanned ? 'Unban' : 'Donasi',
-                m.isGroup ? '.ban' : isBanned ? '.unban' : '.donasi', m)
+                m.isGroup ? 'Ban' : isBanned ? 'Unban' : 'Sewa Bot',
+                m.isGroup ? '.ban' : isBanned ? '.unban' : '.sewa', m)
         }
     } catch (e) {
         return
@@ -87,7 +87,7 @@ handler.all = async function (m, { isBlocked }) {
     if (new Date() * 1 - setting.status > 1000) {
         let _uptime = process.uptime() * 1000
         let uptime = clockString(_uptime)
-        await this.setStatus(`Aktif selama ${uptime} | Mode: ${global.opts['self'] ? 'Private' : setting.groupOnly ? 'Hanya Grup' : 'Publik'} | WARNING!!!! BOT UPDATE BEBERAPA FITUR!!`).catch(_ => _)
+        await this.setStatus(`Aktif selama ${uptime} | Mode: ${global.opts['self'] ? 'Private' : setting.groupOnly ? 'Hanya Grup' : 'Publik'} | This Bot By @irwan_x_yans`).catch(_ => _)
         setting.status = new Date() * 1
     }
 
