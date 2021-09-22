@@ -6,5 +6,6 @@ handler.tags = ['dewasa', 'update']
 
 handler.command = /^(sange)$/i
 handler.limit = 3
+handler.private = true
 handler.register = true
 module.exports = handler
