@@ -9,7 +9,7 @@ conn.sendFile(m.chat, cita, 'asupan.mp4', 'Nihh', m, false, { contextInfo: { for
 }
 
 handler.tags = ['fun']
-handler.help = ['asupan']
+handler.help = ['asupan', 'update']
 handler.command = /^(asupan)$/i
 handler.limit = true
 
