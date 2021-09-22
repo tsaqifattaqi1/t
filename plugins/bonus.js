@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, isPrems }) => {
   db.data.users[m.sender].lastclaim = new Date * 1
 }
 handler.help = ['bonus', 'hadiah']
-handler.tags = ['xp', 'premium']
+handler.tags = ['xp', 'premium', 'update']
 handler.command = /^(bonus|hadiah)$/i
 handler.owner = true
 handler.mods = true
