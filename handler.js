@@ -43,6 +43,9 @@ module.exports = {
           if (!('banned' in user)) user.banned = false
           if (!isNumber(user.level)) user.level = 0
           if (!isNumber(user.call)) user.call = 0
+          if (!isNumber(user.healt)) user.healt = 0
+          if (!isNumber(user.money)) user.money = 0
+          if (!isNumber(user.duidharam)) user.duidharam = 0
           if (!user.role) user.role = 'Bronze'
           if (!('autolevelup' in user)) user.autolevelup = false
           if (!isNumber(user.pc)) user.pc = 0
@@ -52,6 +55,9 @@ module.exports = {
           limit: 10,
           lastclaim: 0,
           registered: true,
+          healt: 100,
+          money: 0,
+          duidharam: 0, 
           name: this.getName(m.sender),
           age: -1,
           regTime: -1,
