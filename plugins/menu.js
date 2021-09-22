@@ -198,7 +198,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
           "title": `${ucapan()}, ${name}`.trim(),
-          "description": "Ini adalah bot whatsapp otomatis yang dirancang dengan fitur gratis dan berbayar.\nUntuk melihat Menu, klik di bawah noh",
+          "description": "Ini Adalah Bot Whatsapp Otomatis Yang Dirancang Dengan Fitur Gratis dan Berbayar.\nUntuk Command Yang Memerlukan Limit = 💦\nUntuk Comman Yang Memerlukan Premium = 🔥",
           "buttonText": "Klik Disini",
           "listType": "SINGLE_SELECT",
           "sections": [
@@ -206,29 +206,29 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "rows": [
                 {
                   "title": `Semua Perintah`,
-                  "description": "Saya mau melihat semua perintah",
+                  "description": "Untuk Menampilkan Semua Perintah",
                   "rowId": ".? all"
                 }, {
                   "title": "Game",
-                  "description": "Pen mainin punyamu,ixix",
+                  "description": "Untuk Menanpilkan Menu Game",
                   "rowId": ".? game"
 
                 }, {
                   "title": "XP",
-                  "description": "Kalo Lu pengen nambah/apalah tentang xp",
+                  "description": "Untuk Menampilkan Menu XP",
                   "rowId": ".? xp"
 
                 }, {
                   "title": "Stiker",
-                  "description": "Buat stiker?",
+                  "description": "Untuk Menampilkan Menu Sticker",
                   "rowId": ".? stiker"
                 }, {
                   "title": "Kerang Ajaib",
-                  "description": "Kerang Taruna?",
+                  "description": "Untuk Menampilkan Menu Kerang Ajaib",
                   "rowId": ".? kerangajaib"
                 }, {
                   "title": "Quotes",
-                  "description": "Ya semacam kata-kata(emang gitu :v)",
+                  "description": "Untuk Menampilkan Menu Quotes",
                   "rowId": ".? quotes"
                 }, {
                   "title": "Admin",
@@ -367,8 +367,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '(Limit)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(Premium)' : '')
+                .replace(/%islimit/g, menu.limit ? '💦' : '')
+                .replace(/%isPremium/g, menu.premium ? '🔥' : '')
                 .trim()
             }).join('\n')
           }),
