@@ -232,39 +232,39 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "rowId": ".? quotes"
                 }, {
                   "title": "Admin",
-                  "description": "Buat Mimin(ada yg nonaktif)",
+                  "description": "Untuk Menampilkan Menu Admin",
                   "rowId": ".? admin"
                 }, {
                   "title": "Grup",
-                  "description": "Digrup Ini bisanya",
+                  "description": "Untuk Menampilkan Menu Grup",
                   "rowId": ".? grup"
                 }, {
                   "title": "Premium",
-                  "description": "Lihat menu yang sudah premium?",
+                  "description": "Untuk Menampilkan Menu Member Premium",
                   "rowId": ".? premium"
                 }, {
                   "title": "Internet",
-                  "description": "Ya sesuai dengan nama",
+                  "description": "Untuk Menampilkan Menu Internet",
                   "rowId": ".? internet"
                 }, {
                   "title": "Anonymous",
-                  "description": "Bukan Hemkel ya",
+                  "description": "Untuk Menampilkan Menu Anonymous",
                   "rowId": ".? anonymous"
                 }, {
                   "title": "Nulis & Logo",
-                  "description": "Semacam logo logo",
+                  "description": "Untuk Menampilkan Menu Nulis & Logo",
                   "rowId": ".? nulis"
                 }, {
                   "title": "Downloader",
-                  "description": "Buat Download",
+                  "description": "Untuk Menampilkan Menu Download",
                   "rowId": ".? downloader"
                 }, {
-                  "title": "Tools",
-                  "description": "Sesuai dengan nama",
+                  "title": "Alat",
+                  "description": "Untuk Menampilkan Menu Alat",
                   "rowId": ".? tools"
                 }, {
                   "title": "Fun",
-                  "description": "Buat gabut gabut",
+                  "description": "Untuk Menampilkan Menu Fun",
                   "rowId": ".? fun"
                 }, {
                   "title": "Database",
@@ -280,31 +280,31 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "rowId": ".? quran"
                 }, {
                   "title": "Pengubah Suara",
-                  "description": "VN bre",
+                  "description": "Untuk Menampilkan Menu Pengubah Suara",
                   "rowId": ".? audio"
                 }, {
                   "title": "Jadi Bot",
-                  "description": "Off",
+                  "description": "Untuk Menampilkan Menu Jadi Bot",
                   "rowId": ".? jadibot"
                 }, {
                   "title": "Info",
-                  "description": "Inpone ri",
+                  "description": "Untuk Menampilkan Menu Info",
                   "rowId": ".? info"
                 }, {
                   "title": "Dewasa",
-                  "description": "deawasalah dikit",
+                  "description": "Untuk Menampilkan Menu Dewasa",
                   "rowId": ".? dewasa"
                 }, {
                   "title": "Update",
-                  "description": "Update Terbaru",
+                  "description": "Untuk Menampilkan Fitur Terbaru",
                   "rowId": ".? update"
                 }, {
                   "title": "Tanpa Kategori",
-                  "description": "sesuai dengan nama",
+                  "description": "Unknown",
                   "rowId": ".? tanpakategori"
                 }, {
                   "title": "Owner",
-                  "description": "Ngapain?",
+                  "description": "Untuk Menampilkan Menu Owner",
                   "rowId": ".? owner"
                 }
               ]
