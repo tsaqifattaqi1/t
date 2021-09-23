@@ -6,7 +6,6 @@ let handler = async (m, { conn }) => await conn.sendButtonLoc(m.chat, await (awa
 ╰•͙✩̣̣
 ⁙┃ ુོ DANA     : 0888-2611-841
 ⁙┃ ુོ OVO      : 0888-2611-841
-⁙┃ ુོ GOPAY    : 0888-2611-841
 ⁙┃ 
 ⁙┃ ુོ SAWERIA  : https://saweria.co/irwanxyans
 ⁙┃ 
