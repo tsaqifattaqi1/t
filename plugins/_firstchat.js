@@ -12,7 +12,7 @@ handler.all = async function (m) {
     await this.sendButton(m.chat, `
 Hai, ${ucapan()}
 
-${user.banned ? 'kamu dibanned' : 'Terimakasih telah menghubungi XsvsH. Silahkan beri tahu apa yang bisa saya bantu.\n\n⚠️ NO DISPAM ‼️\n⚠️ NO TELP/VC ‼️\n\nMelanggar = Block\n\nInvite bot ke grup Anda?\nKetik #join <link>\n\nPengen curhat sama bot?\nKetik #on simi\nSenang Senanglah\n\nAda bug atau eror? Lapor ketik #owner\n\nJika anda merasa Bot ini membantu, jangan sungkan sungkan untuk memberi Donasi ke Pengembang bot ini agar bot on terus, dan bisa membantu.\nKetik #donasi untuk donasi.\n\nThanks✨'}
+${user.banned ? 'kamu dibanned' : 'Terimakasih telah menghubungi XsvsH. Silahkan beri tahu apa yang bisa saya bantu.\n\n⚠️ NO DISPAM ‼️\n⚠️ NO TELP/VC ‼️\n\nMelanggar = Block\n\nInvite bot ke grup Anda?\nKetik #join <link>\n\nMasuk GC Bot?\nKetik #gcb\n\nAda bug atau eror? Lapor ketik #owner\n\nJika anda merasa Bot ini membantu, jangan sungkan sungkan untuk memberi Donasi ke Pengembang bot ini agar bot on terus, dan bisa membantu.\nKetik #donasi untuk donasi.\n\nThanks✨'}
 `.trim(), '© xyz', user.banned ? 'Pemilik Bot' : 'Menu', user.banned ? ',owner' : ',?', m)
     user.pc = new Date * 1
 }
