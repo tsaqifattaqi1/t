@@ -443,7 +443,7 @@ vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;WA;;;\nFN:WA\nTEL;type=CELL;type=VOICE;waid
             }
           }
         }
-        break
+        break          
       case 'promote':
         text = (chat.sPromote || this.spromote || conn.spromote || '@user sekarang Admin')
       case 'demote':
