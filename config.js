@@ -1,5 +1,5 @@
 let fs = require('fs')
-global.owner = ['628882611841', '62882005991227'] // Letakan nomor kamu disini
+global.owner = ['628882611841', '62895622413165'] // Letakan nomor kamu disini
 global.mods = [] // Moderator?
 global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna premium tidak memerlukan limit
 global.APIs = { // API Prefix
@@ -22,7 +22,7 @@ global.APIKeys = { // APIKey nya disini
   'https://hardianto-chan.herokuapp.com': 'hardianto',
   'https://neoxr-api.herokuapp.com': 'yntkts',
   'https://pencarikode.xyz': 'pais',
-  'https://api.xteam.xyz': '8c5e652994c697c0',
+  'https://api.xteam.xyz': 'MIMINETBOT',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'apivinz',
 }
