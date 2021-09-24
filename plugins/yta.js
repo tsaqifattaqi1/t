@@ -11,7 +11,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 *Judul:* ${title}
 *Ukuran File:* ${filesizeF}
 `.trim(), m, null, {
-    asDocument: chat.useDocument, mimetype: 'audio/mp4'
+    asDocument:true chat.useDocument, mimetype: 'audio/mp4'
   })
 }
 handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
