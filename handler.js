@@ -385,43 +385,61 @@ module.exports = {
     let text = ''
     switch (action) {
       case 'add':
-      case 'remove':
         if (chat.welcome) {
           let groupMetadata = await this.groupMetadata(jid)
           for (let user of participants) {
-            // let pp = './src/avatar_contact.png'
-            let pp = 'https://i.ibb.co/jr9Nh6Q/Thumb.jpg'
-            let ppgc = 'https://i.ibb.co/jr9Nh6Q/Thumb.jpg'
+            let pp = 'https://telegra.ph/file/173372d216229af978c67.png'
             try {
-              pp = await uploadImage(await (await fetch(await this.getProfilePicture(user))).buffer())
-              ppgc = await uploadImage(await (await fetch(await this.getProfilePicture(jid))).buffer())
+              pp = await this.getProfilePicture(user)
             } catch (e) {
             } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Selamat datang, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
-                (chat.sBye || this.bye || conn.bye || 'Sampai jumpa, @user!')).replace(/@user/g, '@' + user.split`@`[0])
-              let wel = await new knights.Welcome()
-                .setUsername(this.getName(user))
-                .setGuildName(this.getName(jid))
-                .setGuildIcon(ppgc)
-                .setMemberCount(groupMetadata.participants.length)
-                .setAvatar(pp)
-                .setBackground("https://i.ibb.co/KhtRxwZ/dark.png")
-                .toAttachment()
-
-              let lea = await new knights.Goodbye()
-                .setUsername(this.getName(user))
-                .setGuildName(this.getName(jid))
-                .setGuildIcon(ppgc)
-                .setMemberCount(groupMetadata.participants.length)
-                .setAvatar(pp)
-                .setBackground("https://i.ibb.co/KhtRxwZ/dark.png")
-                .toAttachment()
-
-              this.sendFile(jid, action === 'add' ? wel.toBuffer() : lea.toBuffer(), 'pp.jpg', text, null, false, {
-                contextInfo: {
-                  mentionedJid: [user]
-                }
-              })
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc) :
+                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+        
+//let wel = `https://hardianto-chan.herokuapp.com/api/tools/welcomer?nama=${encodeURIComponent(this.getName(user))}&namaGb=${encodeURIComponent(this.getName(jid))}&pepeGb=${encodeURIComponent(this.getProfilePicture(jid))}&totalMem=${encodeURIComponent(groupMetadata.participants.length)}&pepeUser=${pp}&bege=https://img.kirameki.one/LTqHsfYS.jpg&apikey=hardianto`
+ this.reply(jid, text, { 
+key: {
+fromMe: false,
+participant: '0@s.whatsapp.net',
+remoteJid: 'status@broadcast'
+},
+message: {
+contactMessage: {
+displayName: this.getName(user),
+vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;WA;;;\nFN:WA\nTEL;type=CELL;type=VOICE;waid=${user.split('@')[0]}:${user.split('@')[0]}\nEND:VCARD`
+}
+}
+}, false, { contextInfo: { mentionedJid: this.parseMention(text)}})
+            }
+          }
+        }
+        break
+    case 'remove':
+        if (chat.welcome) {
+          let groupMetadata = await this.groupMetadata(jid)
+          for (let user of participants) {
+            let pp = 'https://telegra.ph/file/173372d216229af978c67.png'
+            try {
+              pp = await this.getProfilePicture(user)
+            } catch (e) {
+            } finally {
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc) :
+                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+        
+//let image = `https://hardianto-chan.herokuapp.com/api/tools/leave?nama=${encodeURIComponent(this.getName(user))}&namaGb=${encodeURIComponent(this.getName(jid))}&pepeGb=${encodeURIComponent(this.getProfilePicture(jid))}&totalMem=${encodeURIComponent(groupMetadata.participants.length)}&pepeUser=${pp}&bege=https://img.kirameki.one/LTqHsfYS.jpg&apikey=hardianto`
+ this.reply(jid, text, { 
+key: {
+fromMe: false,
+participant: '0@s.whatsapp.net',
+remoteJid: 'status@broadcast'
+},
+message: {
+contactMessage: {
+displayName: this.getName(user),
+vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;WA;;;\nFN:WA\nTEL;type=CELL;type=VOICE;waid=${user.split('@')[0]}:${user.split('@')[0]}\nEND:VCARD`
+}
+}
+}, false, { contextInfo: { mentionedJid: this.parseMention(text)}})
             }
           }
         }
