@@ -8,6 +8,6 @@ let handler = async (m, { conn }) => {
 handler.help = ['gb18']
 handler.tags = ['fun', 'update']
 handler.command = /^gb18/i
-handler.limit = true
+handler.premium = true
 
 module.exports = handler
