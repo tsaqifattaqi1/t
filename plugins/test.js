@@ -23,6 +23,7 @@ Durasi: ${duration}
 handler.help = ['playb'].map(v => v + ' <judul>')
 handler.tags = ['downloader']
 handler.command = /^playb$/i
+handler.owner = true
 
 module.exports = handler
 
