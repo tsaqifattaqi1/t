@@ -6,7 +6,7 @@ let handler = async (m, { conn }) => {
         conn.sendFile(m.chat, json.url, 'anu.jpg', 'Nihh', m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
 }
 handler.help = ['gb18']
-handler.tags = ['fun', 'update', 'premium']
+handler.tags = ['dewasa', 'update', 'premium']
 handler.command = /^gb18/i
 handler.premium = true
 
