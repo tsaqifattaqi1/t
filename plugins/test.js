@@ -1,30 +1,15 @@
-const fetch = require('node-fetch')
-
+const fetch = require("node-fetch")
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) throw `uhm.. judul nya apa?\n\ncontoh:\n${usedPrefix + command} blowjob`
-    if (isUrl(text)) throw `uhm.. judul kak bukan pake url\n\ncontoh:\n${usedPrefix + command} akad`
-
-    let res = await fetch(global.API('raceta', '/api/porn', { search: text }))
-    if (!res.ok) throw await `${res.status} ${res.statusText}`
-        let json = await res.json()
-    if (!json.status) throw json
-        //let bkp = JSON.parse(JSON.stringify(res.result));
-    let json = src[Math.floor(Math.random() * src.length)]
-        //let mmq =  bkp[Math.floor(Math.random() * bkp.length)]
-        let urll = json.url
-        let vid = await fetchJson(`https://mnazria.herokuapp.com/api/porndownloadxvideos?url=${urll}`)
-        let vide = await getBuffer(vid.mp4)
-
-
-    await conn.sendFile(m.chat, vide, 'Vid.mp4', 'Nihh', m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
+    if (!text) throw `Contoh Penggunaan:\n*${usedPrefix + command} japanese*`
+    res = await (await fetch(`https://mnazria.herokuapp.com/api/porn?search=${text}`)).json()
+    m.reply(`Loading...`)
+    json = JSON.parse(JSON.stringify(res.result))
+    ran =  json[Math.floor(Math.random() * json.length)]
+   let {actors, duration, image, title, url} = ran //Kalau mau bisa tambahin di caption
+    link = (await (await fetch(`https://mnazria.herokuapp.com/api/porndownloadxvideos?url=${url}`)).json()).mp4
+    await conn.sendFile(m.chat, link, ``, ``, m)
 }
-handler.help = ['playb'].map(v => v + ' <judul>')
-handler.tags = ['dewasa']
-handler.command = /^playb$/i
+handler.command = ["playb"]
 handler.owner = true
 
 module.exports = handler
-
-const isUrl = (text) => {
-    return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
-}
