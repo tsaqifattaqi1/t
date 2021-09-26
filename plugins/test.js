@@ -8,13 +8,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!res.ok) throw await `${res.status} ${res.statusText}`
         let json = await res.json()
     if (!json.status) throw json
-        let bkp = JSON.parse(JSON.stringify(res.result));
-        let mmq =  bkp[Math.floor(Math.random() * bkp.length)]
-        let urll = mmq.url
+        //let bkp = JSON.parse(JSON.stringify(res.result));
+    let json = src[Math.floor(Math.random() * src.length)]
+        //let mmq =  bkp[Math.floor(Math.random() * bkp.length)]
+        let urll = json.url
         let vid = await fetchJson(`https://mnazria.herokuapp.com/api/porndownloadxvideos?url=${urll}`)
         let vide = await getBuffer(vid.mp4)
 
-    await conn.sendFile(m.chat, vide, 'gabut.mp4', 'Nihh', m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
+
+    await conn.sendFile(m.chat, vide, 'Vid.mp4', 'Nihh', m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
 }
 handler.help = ['playb'].map(v => v + ' <judul>')
 handler.tags = ['dewasa']
