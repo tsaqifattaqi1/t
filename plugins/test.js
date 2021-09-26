@@ -8,11 +8,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!res.ok) throw await `${res.status} ${res.statusText}`
     let json = await res.json()
     if (!json.status) throw json
-    bkp = JSON.parse(JSON.stringify(res.result));
-        mmq =  bkp[Math.floor(Math.random() * bkp.length)]
-        urll = mmq.url
-        vid = await fetchJson(`https://mnazria.herokuapp.com/api/porndownloadxvideos?url=${urll}`)
-        vide = await getBuffer(vid.mp4)
+   let bkp = JSON.parse(JSON.stringify(res.result));
+      let  mmq =  bkp[Math.floor(Math.random() * bkp.length)]
+       let urll = mmq.url
+       let vid = await fetchJson(`https://mnazria.herokuapp.com/api/porndownloadxvideos?url=${urll}`)
+       let vide = await getBuffer(vid.mp4)
 
     sendMessage(from, vide, video )
 }
