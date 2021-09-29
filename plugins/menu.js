@@ -311,8 +311,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
             }
           ], "contextInfo": {
             "stanzaId": m.key.id,
-            "participant": m.sender,
-            "quotedMessage": m.message
+            "remoteJid": "status@broadcast",
+            "participant": '6281111111111@s.whatsapp.net',
+            "quotedMessage": { conversation: 'List Menu XsvsH' }
           }
         }
       }, {}), { waitForAck: true })
