@@ -314,25 +314,13 @@ imeg = 'https://i.ibb.co/Q9Wj9vh/IMG-20210817-WA0001.jpg'
                 }
               ]
             }
-          ], { 
-quoted: { 
-  key: {
-  fromMe: false,
-  remoteJid: 'status@broadcast',
-  participant: '0@s.whatsapp.net'
-  },
-  message: {
-   orderMessage: {
-    itemCount: Object.keys(db.data.users).length, 
-thumbnail: await (await require('node-fetch')(imeg)).buffer(),
-    message: `${ucapanWaktu} Kak`.trim(),
-    orderTitle: 'FakeTroli', // Idk what this does
-    orderId: require('crypto').randomBytes(10).toString('hex').toUpperCase(), // Biar Ga ke detect bug troli
-    sellerJid: '0@s.whatsapp.net' // Seller
-   }
-   }} })}
+          ], "contextInfo": {
+            "stanzaId": m.key.id,
+            "participant": m.sender,
+            "quotedMessage": m.message
+          }
         }
-      }, {}, { waitForAck: true }
+      }, {}), { waitForAck: true })
     }
     // gunakan ini jika kamu menggunakan whatsapp bisnis
     //   throw `
@@ -411,7 +399,23 @@ thumbnail: await (await require('node-fetch')(imeg)).buffer(),
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'If you find this BOT useful, feel free to make a small donation to the developer.', 'Pemilik Bot', '.owner', 'Sewa Bot', '.sewa', m)
+    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'If you find this BOT useful, feel free to make a small donation to the developer.', 'Pemilik Bot', '.owner', 'Sewa Bot', '.sewa', m, { 
+quoted: { 
+  key: {
+  fromMe: false,
+  remoteJid: 'status@broadcast',
+  participant: '0@s.whatsapp.net'
+  },
+  message: {
+   orderMessage: {
+    itemCount: Object.keys(db.data.users).length, 
+thumbnail: await (await require('node-fetch')(imeg)).buffer(),
+    message: `${ucapan()} Kak`.trim(),
+    orderTitle: 'FakeTroli', // Idk what this does
+    orderId: require('crypto').randomBytes(10).toString('hex').toUpperCase(), // Biar Ga ke detect bug troli
+    sellerJid: '0@s.whatsapp.net' // Seller
+   }
+   }} })
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
