@@ -29,8 +29,20 @@ const buttonsMessage = {
     contentText: `┈┈┈╱▔▔▔▔▔▔╲┈╭━━━╮┈┈\n┈┈▕┈╭━╮╭━╮┈▏┃BOT.┃┈┈\n┈┈▕┈┃╭╯╰╮┃┈▏╰┳━━╯┈┈\n┈┈▕┈╰╯╭╮╰╯┈▏┈┃┈┈┈┈┈\n┈┈▕┈┈┈┃┃┈┈┈▏━╯┈┈┈┈┈\n┈┈▕┈┈┈╰╯┈┈┈▏┈┈┈┈┈┈┈\n┈┈▕╱╲╱╲╱╲╱╲▏┈┈┈┈┈┈┈
     
 Halo ${conn.getName(m.sender)}
-*⚠GRUP BOT⚠*
 
+
+VC & CALL BOT = BLOCK
+SPAM = BANNED + BLOCK
+
+
+SUBSCRIBE ME
+https://youtube.com/c/ZEROBOT7
+
+JOIN MY GROUP
+https://bit.ly/3B52Rh3
+
+MY Rest API
+https://zerochanbot.herokuapp.com
 `.trim(),    footerText: 'SUBSCRIBE YT : ZEROBOT | | All Rights Reserved' ,
     buttons: buttons,
   imageMessage: await conn.toMSG({ url: imeg }, 'imageMessage'),
@@ -56,6 +68,10 @@ thumbnail: await (await require('node-fetch')(imeg)).buffer(),
 
 conn.relayWAMessage(sendMsg)
 }
+handler.command = /^(kn)$/i
+
+module.exports = handler
+
 function waktu(seconds) { 
 seconds = Number(seconds); 
 var d = Math.floor(seconds / (3600 * 24)); 
@@ -67,8 +83,3 @@ var mDisplay = m > 0 ? m + (m == 1 ? " Menit,":" Menit,") : "";
 var sDisplay = s > 0 ? s + (s == 1 ? " Detik,":" Detik") : ""; 
 return dDisplay + hDisplay + mDisplay + sDisplay; 
 }
-handler.help = ['gcb', 'gcbt']
-handler.tags = ['info', 'update']
-handler.command = /^gcbt|gcb$/i
-
-module.exports = handler
