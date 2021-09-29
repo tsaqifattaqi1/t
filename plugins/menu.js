@@ -399,7 +399,7 @@ imeg = 'https://i.ibb.co/Q9Wj9vh/IMG-20210817-WA0001.jpg'
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'If you find this BOT useful, feel free to make a small donation to the developer.', 'Pemilik Bot', '.owner', 'Sewa Bot', '.sewa', m, { 
+    await conn.prepareMessageFromContent(m.chat, text.trim(), 'If you find this BOT useful, feel free to make a small donation to the developer.', 'Pemilik Bot', '.owner', 'Sewa Bot', '.sewa', m, { 
 quoted: { 
   key: {
   fromMe: false,
