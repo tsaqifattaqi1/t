@@ -402,7 +402,6 @@ imeg = 'https://i.ibb.co/Q9Wj9vh/IMG-20210817-WA0001.jpg'
     await conn.prepareMessageFromContent(m.chat, text.trim(), m, { 
 quoted: { 
   key: {
-  fromMe: false,
   remoteJid: 'status@broadcast',
   participant: '0@s.whatsapp.net'
   },
