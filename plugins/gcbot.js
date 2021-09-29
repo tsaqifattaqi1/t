@@ -3,17 +3,17 @@ levelling = require('../lib/levelling')
 const moment = require('moment-timezone')
 const jam = moment.tz('Asia/Jakarta').format('HH')
  var ucapanWaktu = 'Selamat Pagi'
-				if (jam >= '03' && jam <= '10') {
-				ucapanWaktu = 'Selamat Pagi'
-				} else if (jam >= '10' && jam <= '13') {
-				ucapanWaktu = 'Selamat Siang'
-				} else if (jam >= '13' && jam <= '18') {
-				ucapanWaktu = 'Selamat Sore'
-				} else if (jam >= '18' && jam <= '23') {
-				ucapanWaktu = 'Selamat Malam'
-				} else {
-				ucapanWaktu = 'Selamat Malam'
-				} 
+        if (jam >= '03' && jam <= '10') {
+        ucapanWaktu = 'Selamat Pagi'
+        } else if (jam >= '10' && jam <= '13') {
+        ucapanWaktu = 'Selamat Siang'
+        } else if (jam >= '13' && jam <= '18') {
+        ucapanWaktu = 'Selamat Sore'
+        } else if (jam >= '18' && jam <= '23') {
+        ucapanWaktu = 'Selamat Malam'
+        } else {
+        ucapanWaktu = 'Selamat Malam'
+        } 
 let handler = async (m, { conn, text }) => {
 try {
 imeg = await conn.getProfilePicture(conn.user.jid)
@@ -57,7 +57,7 @@ quoted: {
   },
   message: {
    orderMessage: {
-    itemCount: Object.keys(DATABASE.data.users).length, 
+    itemCount: Object.keys(db.data.users).length, 
 thumbnail: await (await require('node-fetch')(imeg)).buffer(),
     message: `${ucapanWaktu} Kak`.trim(),
     orderTitle: 'FakeTroli', // Idk what this does
