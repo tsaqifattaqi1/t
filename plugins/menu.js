@@ -34,6 +34,11 @@ ${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
+  try {
+imeg = await conn.getProfilePicture(conn.user.jid)
+} catch {
+imeg = 'https://i.ibb.co/Q9Wj9vh/IMG-20210817-WA0001.jpg'
+}
   let tags
   let teks = `${args[0]}`.toLowerCase()
   let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner', 'dewasa', 'update']
@@ -309,14 +314,25 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                 }
               ]
             }
-          ], "contextInfo": {
-            "stanzaId": m.key.id,
-            "remoteJid": "status@broadcast",
-            "participant": '6281111111111@s.whatsapp.net',
-            "quotedMessage": { conversation: 'List Menu XsvsH' }
-          }
+          ], { 
+quoted: { 
+  key: {
+  fromMe: false,
+  remoteJid: 'status@broadcast',
+  participant: '0@s.whatsapp.net'
+  },
+  message: {
+   orderMessage: {
+    itemCount: Object.keys(db.data.users).length, 
+thumbnail: await (await require('node-fetch')(imeg)).buffer(),
+    message: `${ucapanWaktu} Kak`.trim(),
+    orderTitle: 'FakeTroli', // Idk what this does
+    orderId: require('crypto').randomBytes(10).toString('hex').toUpperCase(), // Biar Ga ke detect bug troli
+    sellerJid: '0@s.whatsapp.net' // Seller
+   }
+   }} })}
         }
-      }, {}), { waitForAck: true })
+      }, {}, { waitForAck: true }
     }
     // gunakan ini jika kamu menggunakan whatsapp bisnis
     //   throw `
