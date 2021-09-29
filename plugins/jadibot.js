@@ -9,7 +9,7 @@ else global.conns = []
 
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
   let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
-  if (!db.data.settings.jadibot) throw `Fitur ini tidak aktif\n${package.homepage ? package.homepage.url || package.homepage : '[unknown github url]'}`
+  if (!db.data.settings.jadibot) throw `Pengen Jadi Bot?\nHanya Rp. 30.000 Perbulan Bisa Jadi Bot Seperti Aca\nChat https://wa/me/628882611841\n\nGratis?Enak Aja Lu Numpang Tapi Minta Free\n${package.homepage ? package.homepage.url || package.homepage : '[unknown github url]'}`
   let parent = args[0] && args[0] == 'plz' ? conn : global.conn
   let auth = false
   if ((args[0] && args[0] == 'plz') || global.conn.user.jid == conn.user.jid) {
